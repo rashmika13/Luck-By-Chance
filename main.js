@@ -14,7 +14,7 @@ let playerOneDeck = [];
 let playerOnePlayed;
 let playerTwoDeck = [];
 let playerTwoPlayed;
-let turn = ''
+let turn 
 let winner
 
 // cached elements
@@ -26,20 +26,24 @@ const playerTwoDeckEl = document.getElementById('playerTwoDeck')
 const playerOneWinEl = document.getElementById('win1')
 const playerTwoWinEl = document.getElementById('win2')
 const itsATieEl = document.getElementById('tie')
-// const player1TurnEl = document.getElementById('#blink1');
-// const player2TurnEl = document.getElementById('#blink2');
+const playerTurnEl = document.getElementById('playerturn')
+const gameInstructionsEl = document.getElementById('game-instructions')
+const enterButtonEl = document.getElementById('enterbtn')
 
 // Event Listeners
 shuffleBtn.addEventListener('click', initialize)
 playerOneDeckEl.addEventListener('click', takeTurn)
 playerTwoDeckEl.addEventListener('click', takeTurnTwo)
-
-
-  
+enterButtonEl.addEventListener('click', enterGame)
 
 // Functions
+function enterGame() {
+    gameInstructionsEl.style.display = "none"
+}
+
+
+
 initialize()
-updatePlayerTurn()
 
 function initialize() {
     shuffleDeck()
@@ -61,7 +65,20 @@ let  i = 0
     deck[i] = deck[j]
     deck[j] = temp
   }
+  if (winner === 'One'|| winner === 'Two' || winner === 'tie') {
+    shuffleBtn.style.backgroundColor = "#4CAF50"
+    playerOneWinEl.innerHTML= ""
+    playerTwoWinEl.innerHTML= ""
+    itsATieEl.innerText = ""
+    playerOnePlayed = ""
+    playerTwoPlayed = ""
+    winner = ""
+    turn = "One"
+    
+  }  
+  highlightPlayerTurn()
 }
+
 
 function cardsAreEqual() {
     let valOne = null
@@ -76,13 +93,23 @@ function cardsAreEqual() {
 }
 
 
-function updatePlayerTurn() {
-    if (turn === 'One'){
+function highlightPlayerTurn() {
+    if (turn === '' || winner) {
+        playerOneDeckEl.style.border = ""
         playerTwoDeckEl.style.border = ""
-        playerOneDeckEl.style.border = "2px solid red"
+        playerTurnEl.innerText= ""
+    } else if (turn === 'One'){
+        playerTwoDeckEl.style.border = ""
+        playerOneDeckEl.style.border = "5px solid red"
+        playerTurnEl.innerText= "Player One's Turn"
+    } else if (turn === 'Two'){
+        playerOneDeckEl.style.border = ""
+        playerTwoDeckEl.style.border = "5px solid red"
+        playerTurnEl.innerText= "Player Two's Turn"
     } else {
         playerOneDeckEl.style.border = ""
-        playerTwoDeckEl.style.border = "2px solid red"
+        playerTwoDeckEl.style.border = ""
+        playerTurnEl.innerText= ""
     }
     }
 
@@ -95,7 +122,9 @@ function takeTurn() {
         winner = 'One'
     }
     turn = 'Two'
+    highlightPlayerTurn()
     render()
+   
 } 
 
 function takeTurnTwo () {
@@ -109,6 +138,7 @@ function takeTurnTwo () {
         winner = 'Tie'
     }
     turn = 'One'
+    highlightPlayerTurn()
     render ()
 } 
 
@@ -132,7 +162,6 @@ function render() {
         } else {
             shuffleBtn.style.backgroundColor = "red"
         }
-    }
+    } 
 }
-
 

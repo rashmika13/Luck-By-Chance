@@ -1,4 +1,5 @@
-body {
+ 
+  body {
   border: 3px solid black;
   flex-direction: column;
   width: auto;
@@ -6,9 +7,46 @@ body {
   background-color: #DAF7A6;
   font-family: 'Arial';
 }
+
+#game-instructions {
+    position: absolute;
+    width: 50%;
+    border: 3px solid black;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    background: #EC9DC9;   
+}
+
+h1 {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 30px;
+   color: purple;
+   font-weight: lighter;
+}
+
+p {
+  font-size: 20px;
+}
+
+#enterbtn {
+  width: 100px;
+  height: 10%;
+  font-size: 20px;
+  border-radius: 8%;
+  cursor: pointer; 
+  margin-bottom: 10%;
+  border: 2px solid gray;
+}
+#enterbtn:hover {
+  background-color:#27E2CE;
+  border: 2px solid black;
+}
+
 .game-title {
   color: rebeccapurple;
-  margin-bottom: 150px;
+  font-size: 40px;
+  margin-bottom: 100px;
   text-align: center;
   margin-top: 60px;
 }
@@ -58,12 +96,6 @@ body {
 }
 
 
- /* #blink1 {
-  
-}
-#blink2 {
-  
-}  */
 
 
 
