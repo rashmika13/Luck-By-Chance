@@ -14,7 +14,7 @@ let playerOneDeck = [];
 let playerOnePlayed;
 let playerTwoDeck = [];
 let playerTwoPlayed;
-let turn 
+let turn = ''
 let winner
 
 // cached elements
@@ -26,7 +26,8 @@ const playerTwoDeckEl = document.getElementById('playerTwoDeck')
 const playerOneWinEl = document.getElementById('win1')
 const playerTwoWinEl = document.getElementById('win2')
 const itsATieEl = document.getElementById('tie')
-const blinkEl = document.getElementById('blink')
+// const player1TurnEl = document.getElementById('#blink1');
+// const player2TurnEl = document.getElementById('#blink2');
 
 // Event Listeners
 shuffleBtn.addEventListener('click', initialize)
@@ -38,12 +39,7 @@ playerTwoDeckEl.addEventListener('click', takeTurnTwo)
 
 // Functions
 initialize()
-
-function blinkEl(btn1) {
-    btn1.removeClass();
-    btn1.addClass("highlight");
-    setTimeout(function () { blink2(btn1); }, 750);
-}
+updatePlayerTurn()
 
 function initialize() {
     shuffleDeck()
@@ -53,10 +49,8 @@ function initialize() {
     playerTwoPlayed = null
     turn = 'One'
     winner = null
-
     render()
 }
-
 function shuffleDeck() {
 let  i = 0
      j = 0
@@ -81,11 +75,23 @@ function cardsAreEqual() {
     return valOne === valTwo
 }
 
+
+function updatePlayerTurn() {
+    if (turn === 'One'){
+        playerTwoDeckEl.style.border = ""
+        playerOneDeckEl.style.border = "2px solid red"
+    } else {
+        playerOneDeckEl.style.border = ""
+        playerTwoDeckEl.style.border = "2px solid red"
+    }
+    }
+
+
 function takeTurn() {
     if (turn === 'Two' || winner) return
     playerOnePlayed = playerOneDeck.shift() 
     if (cardsAreEqual()) {
-        playerOneWinEl.innerText= "Player 1 Wins !"
+        playerOneWinEl.innerHTML= "Player 1 Wins !" ;
         winner = 'One'
     }
     turn = 'Two'
@@ -106,10 +112,9 @@ function takeTurnTwo () {
     render ()
 } 
 
-
 function render() {
-    activeCardOneEl.className = 'card'
-    activeCardTwoEl.className = 'card'
+    activeCardOneEl.className = 'card xlarge'
+    activeCardTwoEl.className = 'card xlarge'
   
     if (playerOnePlayed) {
       activeCardOneEl.classList.add(playerOnePlayed)

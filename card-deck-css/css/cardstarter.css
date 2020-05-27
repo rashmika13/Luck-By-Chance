@@ -18,16 +18,11 @@
   overflow: hidden;
 }
 
-body {
-    text-align: center;
-   
-}
-
 #shuffle{
     box-shadow: black;
 }
 
-  .card.small {
+ .card.small {
     font-size: 12px; }
   .card.large {
     font-size: 26px; }
@@ -304,7 +299,7 @@ body {
 
 .card.back {
   background-image: url("../images/backs/blue.svg");
-border: 2px solid red }
+}
 
 .card.back-blue {
   background-image: url("../images/backs/blue.svg"); }

@@ -1,50 +1,69 @@
-* {
-  margin: 50px;
-  padding: 0;
-}
 body {
-    border: 3px solid black
-    display: grid;
-    flex-direction: column;
-    width: auto;
-    height: 100vh; 
-    background-color:#DAF7A6 ;
-    font-family: 'Arial';  
+  border: 3px solid black;
+  flex-direction: column;
+  width: auto;
+  height: 100vh;
+  background-color: #DAF7A6;
+  font-family: 'Arial';
 }
-h1 {
-  color:rebeccapurple
+.game-title {
+  color: rebeccapurple;
+  margin-bottom: 150px;
+  text-align: center;
+  margin-top: 60px;
 }
-
-#blink1 {
-  font-size: 20px;
-  margin: 0px;
+.game-board-container {
   display: flex;
-    flex-wrap: nowrap;
-    align-content: space-between;
-    transition-property: background-color;
-  transition-duration: 3s;
+  justify-content: center;
 }
-
-#blink2 {
-  font-size: 20px;
-  text-align: right;
-  padding: 10px;
+.player-container {
   display: flex;
-    flex-wrap: nowrap;
-    align-content:right;
+  flex-direction: column;
+  text-align: center;
 }
-
-
+.player-cards-container {
+  display: flex;
+  justify-content: center;
+}
+.shuffle-deck {
+  display: flex;
+  justify-content: center;
+}
 #shuffle {
-        border: black;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        background-color: #4CAF50;color: black;
+  border: 2px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: black;
+  border-radius: 3px;
+  height: 60px;
+  width: 150px;
 }
+.game-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-display {
+  font-size: 30px;
+  color: purple;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+
+ /* #blink1 {
+  
+}
+#blink2 {
+  
+}  */
+
+
 

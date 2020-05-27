@@ -11,25 +11,38 @@
    
 </head>
 <body>
-    <h1>LUCK BY CHANCE</h1>
-    <br>
-    <div id="blink1">PLAYER ONE'S TURN</div>
-    <div id="blink2">PLAYER TWO</div>
-    <div class="card back blue shadow" id="playerOneDeck"  ></div>
-    <div class="card " id="activeCardOne"></div>
-    <div class="card " id="activeCardTwo"></div>
-    <div class="card back blue shadow "id="playerTwoDeck"></div>
-
-    <div class="deck" ></div>
-    <div id="suits"></div>
-    <div id="values"></div>
-    <div id="win1"></div>
-    <div id="win2"></div>
-    <div id="tie"></div>
+    <h1 class="game-title">LUCK BY CHANCE</h1>
+    <div class="result-display">
+        <div id="win1"></div>
+        <div id="win2"></div>
+        <div id="tie"></div>
+    </div>
     
-
-    <button id="shuffle">Shuffle Deck</button>
-
+    <div class="game-board-container">
+        <div class="player-container">
+            <div id="blink1">PLAYER ONE</div>
+            <div class="player-cards-container">
+                <div class="card xlarge back blue shadow" id="playerOneDeck"></div>
+                <div class="card xlarge" id="activeCardOne"></div>
+            </div>
+        </div>
+        <div class="player-container">
+            <div id="blink2">PLAYER TWO</div>
+            <div class="player-cards-container">
+                <div class="card xlarge " id="activeCardTwo"></div>
+                <div class="card xlarge back blue shadow " id="playerTwoDeck"></div>
+            </div>
+        </div>
+    </div>
+    <div class="deck"></div>
+    <div class="shuffle-deck">
+        <button id="shuffle">Shuffle Deck</button>
+    </div>
+    <div class="game-stats">
+        <div id="suits"></div>
+    <div id="values"></div>
+    
+    </div>
 </body>
 
 </html>
