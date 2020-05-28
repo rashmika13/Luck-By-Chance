@@ -34,7 +34,7 @@
 
 ## How to Play
 
-[Click here to play the game](https://rashmika13.github.io/Luck-By-Chance/)
+[Click here to play the game](https://rashmika13.github.io/Luck-By-Chance/?target=_blank)
 
 - Shuffle deck to start
 - When indicated each player takes turn to flip a card from the deck
