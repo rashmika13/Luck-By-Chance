@@ -1,42 +1,37 @@
-* loadGame logic:
-    - Initialize all state variables by calling init()
-        - deck with all the cards gets randomly pushed into two arrays, playerOneDeck and playerTwoDeck arrays
-        - fight button is displayed
-        - player1Score and player2Score set to 0
-        - cardInPlay1 and cardInPlay2 variables reset
-        - player names updated (see stretch goals for player names)
-    - Update the display by calling render()
-        - console.log that game has started
-
-* initiate Luck by Chance logic:
-    - clicking shuffle deck button shuffles the deck 
-
-* checkCards logic:
-    - if playerOnePlayed played after playertwo and card value = playerTwoCard value then display "Player1 wins" 
-    -- if playerTwoPlayed played after playertwo and card value = playerTwoCard value then display "Player1 wins"
-    - if cardInPlay1 === cardInPlay2 display "Tie" and no changes to score (see stretch goals for ties)
-    - game arena stays as is until user refreshes page (resets game?) or hits fight button to initiateWar
-
-* getWinner logic:
-    - once arrays are empty, compare player1 score and player2 score
-    - if player1 score > player2 score => display "Player1 wins!"
-    - if player1 score < player2 score => display "Player2 wins!"
-    - if player1 score = player2 score => display "tie game!"
-    - remove fight button and display "Play again" button that loadsGame()
-
-* Stretch goals:
-    Player Names: 
-    - generate random "enemy" names for each game  (i.e. Luke Skywalker vs. Darth Vadar)
-
-    Tie:
-    - in getWinner logic...when cardInPlay1 === cardInPlay2, 3 cards pushed into playerTie1 & 2 arrays from players respective array
-    - fourth card is pushed to cardInPlay1 & 2 and getWinner logic run again
-
-    Cards:
-    - use custom cards 
+* loadGame:
+    - gameMenu is displayed and enter button needs to be clicked to diplay the game board and initialize 
+    - Initialize all state variables by calling initialize()
+        - Shuffles the deck 
+        - Deck with all the cards gets randomly pushed into two decks with eqaul arrays-playerOneDeck and playerTwoDeck
+        - PlayerOneplayed , PlayerTwoPlayed and winner are set to a null value
+        - Turn is set to 'one'
+        - Updates the display by calling render()
+        - highlights playerOneDeck 
 
 
-** Tie logic
-- when comparecards and tie, set isTie to true and deal additional cards 
-- game board changes and player will need to click fight to check cards
-- comparecards when isTie will take all cards and put them on winner deck
+* render :
+        - display  active cards as playerOnePlayed or playerTwoPlayed 
+        - checks for tie
+
+* highlightPlayerTurn: 
+        - highlights (by adding solid red border ) the active players deck to indicate their turn
+
+* takeTurn: 
+        - determines player 1 win or tie ; switches turn; highlights active card 
+
+* takeTurnTwo:
+        -determines player 2 win or tie ; switches turn; highlights active card 
+
+* cardAreEqual 
+        - split the string in each array of card and compare the value only (not suits)
+        - Card- King of spades (value = 13) and is equal to King of clubs (value = 13)
+
+* winner logic:
+        - if playerOnePlayed played after playertwo and card value = playerTwoCard value then display "Player 1 wins" 
+        - if playerTwoPlayed played after playertwo and card value = playerOneCard value then display "Player 2 wins"  
+         
+* Tie logic
+        - if there is no card left in the deck to diaplay and there is no winner then display "its a Tie" 
+        - game resets by clicking shuffle button
+
+
