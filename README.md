@@ -2,8 +2,6 @@
 
 <p style="font-family: times, serif; font-size:14pt; font-style:italic">This is a card game that I used to play during my childhood and I created an online version for my Project 1 of Software Engineering course. </p>
 
-[Click here to play the game]()
-
 # Game Instructions
 
 ![Instructions Image](Gameimages/../Game%20images/Game%20Instructions.png)
@@ -35,6 +33,8 @@
 - JavaScript
 
 ## How to Play
+
+[Click here to play the game](https://rashmika13.github.io/Luck-By-Chance/)
 
 - Shuffle deck to start
 - When indicated each player takes turn to flip a card from the deck
